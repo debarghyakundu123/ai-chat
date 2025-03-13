@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Chat</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrious/4.0.2/qrious.min.js"></script>
+</head>
+<body>
+    <div class="chat-container">
+        <h1>🤖 AI Chat Assistant</h1>
+        
+        <div id="chat-box"></div>
+
+        <div class="input-container">
+            <img src="{{ url_for('static', filename='images/user.png') }}" alt="User Avatar" class="avatar">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button id="send-button">📩</button>
+            <button id="mic-button">🎤</button>
+            <button id="qr-button">📱 QR</button> <!-- QR Code Button -->
+        </div>
+
+        <!-- QR Code Container -->
+        <div id="qr-container">
+            <p>Scan to open this chat on another device:</p>
+            <canvas id="qr-code"></canvas>
+        </div>
+    </div>
+    
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
