@@ -38,14 +38,15 @@ def fetch_news_articles(query, num_results=3):
     print("🔍 Searching for latest news...")
     
     try:
-        links = list(search(query, num_results=num_results))
+        llinks = list(search(query, stop=num_results))
+
     except Exception as e:
         print(f"❌ Google search error: {e}")
         return []
 
     articles = []
     
-    for link in links:
+    for link in llinks:
         try:
             article = Article(link)
             article.download()
